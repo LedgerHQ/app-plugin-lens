@@ -21,11 +21,9 @@ let simOptions = {
 
 const Resolve = require("path").resolve;
 
-const APP_PATH_NANOS = Resolve("elfs/ethereum_nanos.elf");
 const APP_PATH_NANOX = Resolve("elfs/ethereum_nanox.elf");
 const APP_PATH_NANOSP = Resolve("elfs/ethereum_nanosp.elf");
 
-const PLUGIN_LIB_NANOS = { 'Lens': Resolve("elfs/plugin_nanos.elf") };
 const PLUGIN_LIB_NANOX = { 'Lens': Resolve("elfs/plugin_nanox.elf") };
 const PLUGIN_LIB_NANOSP = { 'Lens': Resolve("elfs/plugin_nanosp.elf") };
 
@@ -96,7 +94,6 @@ function zemu(device, func, testNetwork, signed = false) {
       let current_model: model;
       
       const models: model[] = [
-        {dev:{ name : 'nanos', prefix: 'S' , path: APP_PATH_NANOS}, plugin: PLUGIN_LIB_NANOS},
         {dev:{ name : 'nanox', prefix: 'X' , path: APP_PATH_NANOX}, plugin: PLUGIN_LIB_NANOX},
         {dev:{ name : 'nanosp', prefix: 'SP' , path: APP_PATH_NANOSP}, plugin: PLUGIN_LIB_NANOSP}
     ]
